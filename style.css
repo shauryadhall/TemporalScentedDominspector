@@ -125,9 +125,10 @@ h1 {
 
 .industry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
+  padding: 1rem;
 }
 
 .industry-item {
@@ -257,7 +258,39 @@ h2 {
     flex-direction: column;
   }
   
-  .logo-grid {
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .industry-item {
+    padding: 1rem;
+  }
+  
+  .industry-item img {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .industry-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .industry-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }

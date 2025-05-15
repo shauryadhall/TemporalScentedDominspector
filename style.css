@@ -92,14 +92,17 @@ h1 {
 
 .industry-item {
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .industry-item::before {
@@ -108,20 +111,22 @@ h1 {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  height: 5px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
 }
 
 .industry-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .industry-item h3 {
   color: #1e40af;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .title {

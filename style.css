@@ -9,6 +9,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: #333;
+  background-color: #f8fafc;
 }
 
 main {
@@ -24,8 +25,11 @@ main {
 
 h1 {
   font-size: 3.5rem;
-  color: #2d3748;
+  color: #1a365d;
   margin-bottom: 1rem;
+  background: linear-gradient(45deg, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .tagline {
@@ -48,11 +52,18 @@ h1 {
 }
 
 .benefit-card {
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
 }
 
 .benefit-card h3 {
@@ -122,15 +133,18 @@ input[type="email"] {
 
 button {
   padding: 0.75rem 2rem;
-  background: #4299e1;
+  background: linear-gradient(45deg, #2563eb, #1d4ed8);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 button:hover {
-  background: #3182ce;
+  background: linear-gradient(45deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }

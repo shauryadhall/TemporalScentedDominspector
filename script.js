@@ -6,12 +6,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   this.reset();
 });
 
-// Add smooth scrolling for links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
+// Simple carousel animation
+const carousel = document.querySelector('.carousel');
+setInterval(() => {
+  carousel.scrollBy({
+    left: 220,
+    behavior: 'smooth'
+  });
+  if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+    carousel.scrollTo({
+      left: 0,
       behavior: 'smooth'
     });
-  });
-});
+  }
+}, 3000);

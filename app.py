@@ -1,8 +1,12 @@
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
+
+@app.route('/')
+def root():
+    return send_from_directory('.', 'index.html')
 
 @app.route('/submit-email', methods=['POST'])
 def submit_email():
@@ -11,7 +15,6 @@ def submit_email():
         return jsonify({'error': 'Email is required'}), 400
         
     # Here you can add code to store the email (e.g., in a database)
-    # For now, we'll just print it
     print(f"New email submission: {email}")
     return jsonify({'message': 'Email submitted successfully'}), 200
 

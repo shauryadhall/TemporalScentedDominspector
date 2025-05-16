@@ -41,5 +41,38 @@ def submit_email():
         print(f"Error storing email: {str(e)}")
         return jsonify({'error': 'Internal server error'}), 500
 
+@app.route('/view-emails')
+def view_emails():
+    try:
+        conn = sqlite3.connect('emails.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM emails')
+        emails = c.fetchall()
+        conn.close()
+        
+        html = '''
+        <html>
+        <head>
+            <style>
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                th { background-color: #003B7E; color: white; }
+                tr:nth-child(even) { background-color: #f2f2f2; }
+            </style>
+        </head>
+        <body>
+            <h2>Submitted Emails</h2>
+            <table>
+                <tr><th>Email</th><th>Timestamp</th></tr>
+        '''
+        
+        for email in emails:
+            html += f'<tr><td>{email[0]}</td><td>{email[1]}</td></tr>'
+            
+        html += '</table></body></html>'
+        return html
+    except Exception as e:
+        return f"Error: {str(e)}"
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
